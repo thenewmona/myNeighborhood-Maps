@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Udacity Neighborhood Map Project</title>
+</head>
+<style>
+    #map{
+        height:400px;
+        width:100%;
+    }
+    
+</style>
+<body>
+    
+        <h1> Mona's Map</h1>
+        <div id="raceMap"></div>
+
+        <script>
+        function initMap () {
+            let specs = {
+                zoom:8,
+                center:{lat:42.9134, lng:-85.7053}//wyoming, mi
+            }
+            let map = new
+            google.mpas.Map(document.getElementById('raceMap'),specs);
+        }
+
+        </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAV8p8HgoSIc7FMci-PmHof0btkmRz7jEY&callback=initMap">
+    </script>   
+</body>
+</html>
