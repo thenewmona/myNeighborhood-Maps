@@ -1,4 +1,5 @@
 ## Google Maps API resources 
+https://icons8.com/ **using these icons 
 
 [Google Maps Platform Documentation](https://developers.google.com/maps/documentation/)
 
@@ -17,3 +18,42 @@
 [Google Maps Platform Overview](https://developers.google.com/maps/documentation/javascript/tutorial)
 
 [Adding a Google Map with a Marker to Your Website](https://developers.google.com/maps/documentation/javascript/adding-a-google-map)
+
+## Icons resources 
+
+https://mapifypro.com/50-free-map-pins-and-images/
+http://psdblast.com/high-resolution-google-map-psd
+https://medialoot.com/item/free-vector-map-location-pins/
+http://pixelmonarchy.com/resources/google-map-ui-kit-free-psd-files/
+https://365psd.com/day/2-233/
+https://365psd.com/download/colorful-map-tags-60669
+https://365psd.com/day/2-302/
+https://365psd.com/day/4-151/
+https://365psd.com/download/map-pointers-61310
+http://designdeck.co.uk/download/1241
+
+**365 disclaimer notes**
+Please include attribution information when you use the graphic on external websites.
+Visual Editor (e.g. WordPress)
+Image By:Map Pointers from 365PSD.com
+
+HTML Editor
+<strong>Image By</strong>:<a href="https://365psd.com/day/4-151/" title="Map Pointers" target="_blank">Map Pointers</a> from <a href="https://365psd.com/" target="_blank">365PSD.com</a>
+
+## InfoWindow Resources 
+[5 ways to customize the Google Maps infowindow](https://codepen.io/Marnoto/pen/xboPmG)
+[How to fully customize your Google Map Info Windows with Infobox](http://michaelsoriano.com/customize-google-map-info-windows-infobox/)
+[How to customize Google Maps Info Window (Popup)](https://www.storemapper.co/support/knowledge-base/customize-google-maps-info-window/)
+[How to Customize Infowindow in Google Maps](How to Customize Infowindow in Google Maps)
+[Info Windows](https://developers.google.com/maps/documentation/javascript/infowindows)
+
+## Markers Resources 
+
+
+[Symbols](https://developers.google.com/maps/documentation/javascript/symbols#predefined)
+[Marker Options](https://developers.google.com/maps/documentation/javascript/reference/marker#MarkerOptions)
+[Markers](https://developers.google.com/maps/documentation/javascript/markers)
+[Customizing a Google Map: Custom Markers](https://developers.google.com/maps/documentation/javascript/custom-markers)
+
+
+
