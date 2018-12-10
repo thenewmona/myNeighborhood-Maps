@@ -19,6 +19,8 @@ https://icons8.com/ **using these icons
 
 [Adding a Google Map with a Marker to Your Website](https://developers.google.com/maps/documentation/javascript/adding-a-google-map)
 
+[Coding Session - Google Maps With React JS - Ryan](https://www.youtube.com/watch?v=5J6fs_BlVC0&t=332s)
+
 ## Icons resources 
 
 https://mapifypro.com/50-free-map-pins-and-images/
@@ -55,5 +57,12 @@ HTML Editor
 [Markers](https://developers.google.com/maps/documentation/javascript/markers)
 [Customizing a Google Map: Custom Markers](https://developers.google.com/maps/documentation/javascript/custom-markers)
 
+## Marker clustering 
 
+[MarkerClusterer for Google Maps v3](https://www.npmjs.com/package/@google/markerclusterer)
+[MarkerClusterer v3 Examples](https://htmlpreview.github.io/?https://raw.githubusercontent.com/googlemaps/v3-utility-library/master/markerclusterer/docs/examples.html)
 
+## Google Map React
+
+[React Js tutorial - google map integration](https://www.youtube.com/watch?v=rWiYi9v8JFU)
+[Google Maps in React: Autocomplete Location Search | Draggable Marker | Marker Infobox](https://medium.com/@imranhsayed/google-maps-in-react-autocomplete-location-search-draggable-marker-marker-infobox-565ab8e8cf22)

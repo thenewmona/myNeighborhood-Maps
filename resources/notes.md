@@ -96,3 +96,9 @@ learned how to customize the icons got my first custom icon , here are the notes
 `<img alt="" src="https://img.icons8.com/material-rounded/2x/street-view.png" draggable="false" style="position: absolute; left: 0px; top: 0px; width: 64px; height: 64px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;">`
 
 getting all the map location information, then off to the info window 
+
+12/9/2018
+
+needing to organize my markers 
+researching marker clustering 
+
