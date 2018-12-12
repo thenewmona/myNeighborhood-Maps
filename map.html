@@ -1,0 +1,289 @@
+<!-- Brad Traversy https://www.youtube.com/watch?v=Zxf1mnP5zcw -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Udacity Neighborhood Map Project</title>
+    <style>
+    #map {
+        height:100vh;/*per Asmaa from Slack*/
+        width:100%;
+    }
+    </style>
+    
+</head>
+
+<body>
+        <h1 class= 'header'>SaintAndre's Races 2018</h1>   
+            
+    <div id="map"></div>
+    <script>    
+//map specifications and initialization 
+            function initMap() {
+                let specs = {
+                    zoom: 8,
+                    center: {lat: 42.9134, lng: -85.7053},//my city wyoming, mi
+                }
+                //new map
+                let map = new google.maps.Map(document.getElementById('map'),specs);
+    
+//Marker Array 
+//adding the cordinates to create a prop, so we can have multiple location markers 
+let markers = [//need to work on marker clustering here 
+{
+    cordinates:{lat:42.8946,lng:-85.6622},
+iconImage:'/marker images/home map icon.png',
+title:'<h1> Home </h1>',
+content:'<h1>This is where we start from</h1>',
+size:new google.maps.Size(20,32),
+
+},
+
+{//snowman 10k
+    cordinates:{lat:43.582016,lng:-84.7706},
+iconImage:'/marker images/snowman.jpg',
+content:'<h3>Snowman 10k(Jan 21)</h3>',
+label:'off road race',
+
+},
+
+{//icecube 10k
+    cordinates:{lat:43.582016,lng:-84.7706},
+iconImage:'https://img.icons8.com/color/2x/track-and-field.png',
+content:'<h3>IceCube 10k(Feb 18)</h3>',
+label:'off road race',
+},
+
+{//muddog
+    cordinates:{lat:43.582016,lng:-84.7706},
+iconImage:'/marker images/snowman.jpg',
+content:'<h3>MudDog 10k(Mar 11)</h3>',
+label:'off road race',
+},
+
+{//Yankee Springs
+    cordinates:{lat:42.6189,lng:-85.5159},
+iconImage:'https://img.icons8.com/material-rounded/2x/street-view.png',
+content:'<h3> Yankee Springs Trail 10k (Jan 6)</h3>',
+label:'Trail Run',
+},
+
+{//WTF
+    cordinates:{lat:42.8946,lng:-85.5169},
+iconImage:'https://img.icons8.com/material-rounded/2x/street-view.png',
+content:'<h3> Winter Trail Fest 1/2 Marathon (Mar 3)</h3>',
+label:'Trail Run',
+},
+
+{//Abominal Snowman
+    cordinates:{lat:42.6101,lng:-88.4051},
+iconImage:'https://img.icons8.com/material-rounded/2x/street-view.png',
+content:'<h3> Abominal Snowman(Jan 27th) </h3>',
+label:'Obstacle Course Race',
+},
+
+{//man vs mountain
+    cordinates:{lat:43.6074,lng:-84.7800},
+iconImage:'/marker images/manvsmtn.jpg',
+content:'<h3> Man vs. Mountain (Feb 3) </h3>',
+label:'Obstacle Course Race',
+},
+
+{//Hero Mud Run 
+    cordinates:{lat:43.2366,lng:-86.0821},
+iconImage:'https://img.icons8.com/material-rounded/2x/street-view.png',
+content:'<h3> Hero Mud Run(May 5)</h3>',
+label:'Obstacle Course Race',
+},
+
+{//Foreshores
+    cordinates:{lat:43.2366,lng:-86.3425},
+iconImage:'https://img.icons8.com/material-rounded/2x/street-view.png',
+content:'<h3> ForeShore Adventure Run (May 19th)</h3>',
+label:'Obstacle Course Race',
+},
+
+{//Ohio Beast - June
+    cordinates:{lat:41.2744,lng:-81.0154},
+iconImage:'https://img.icons8.com/material-rounded/2x/street-view.png',
+content:'<h3> Ohio Beast(June 2)</h3>',
+label:'Obstacle Course Race',
+},
+{//Ohio Sprint 
+    cordinates:{lat:41.2744,lng:-81.0154},
+iconImage:'https://img.icons8.com/material-rounded/2x/street-view.png',
+content:'<h3>Ohio Sprint (June 3)</h3>',
+label:'Obstacle Course Race',
+},
+{//Kalmazoo Mud Run 
+    cordinates:{lat:42.3092,lng:-85.5238},
+iconImage:'https://img.icons8.com/material-rounded/2x/street-view.png',
+content:'<h3> Kalmazoo Mud Run (June 3) </h3>',
+label:'Obstacle Course Race',
+},
+{//Chicago Super 
+    cordinates:{lat:42.8946,lng:-85.6622},
+iconImage:'https://img.icons8.com/material-rounded/2x/street-view.png',
+content:'<h3> Spartan Super - Chicago  (June 23) </h3>',
+label:'Obstacle Course Race',
+},
+{//Chicago Sprint 
+    cordinates:{lat:42.8946,lng:-85.6622},
+iconImage:'https://img.icons8.com/material-rounded/2x/street-view.png',
+content:'<h3> Spartan Sprint - Chicago  (June 24)</h3>',
+label:'Obstacle Course Race',
+},
+{//Indiana Sprint 
+    cordinates:{lat:39.1486,lng:-84.8855},
+iconImage:'https://img.icons8.com/material-rounded/2x/street-view.png',
+content:'<h3> Spartan Sprint - Indiana (July 7) </h3>',
+label:'Obstacle Course Race',
+},
+{//Knoxsville Sprint - Oscar Mike 
+    cordinates:{lat:37.8685,lng:-85.9960},
+iconImage:'https://img.icons8.com/material-rounded/2x/street-view.png',
+content:'<h3> Spartan Sprint - Knoxsville Hero(July 14) </h3>',
+label:'Obstacle Course Race ',
+},
+{//FrankenMudder
+    cordinates:{lat:43.3184,lng:-83.7353},
+iconImage:'https://img.icons8.com/material-rounded/2x/street-view.png',
+content:'<h3> FrankenMudder (July 21) </h3>',
+label:'Obstacle Course Race',
+},
+{//Warrior Dash 
+    cordinates:{lat:43.1285,lng:-83.5853},
+iconImage:'./marker images/warrior dash.png',
+content:'<h3> Warrior Dash (July 28) </h1=3>',
+label:'Obstacle Course Race',
+},
+{//David Warsen Memorial Run 
+    cordinates:{lat:42.8523,lng:-85.6149},
+iconImage:'https://img.icons8.com/material-rounded/2x/street-view.png',
+content:'<h3> David Warsen Memorial Run 5K (Aug 11)</h3>',
+label:'Trail Run ',
+},
+{// GR MudRun 
+    cordinates:{lat:42.8521,lng:-85.6331},
+iconImage:'https://img.icons8.com/material-rounded/2x/street-view.png',
+content:'<h3> GR MudRun (Aug 25) </h3>',
+label:'Obstacle Course Race',
+},
+{//Chicago Beast
+    cordinates:{lat:40.27065,lng:-87.2583},
+iconImage:'https://img.icons8.com/material-rounded/2x/street-view.png',
+content:'<h3> Spartan Beast - Chicago 2 (Sept 8) </h3>',
+label:'Obstacle Course Race',
+},
+{//Chicago Sprint 
+    cordinates:{lat:40.27065,lng:-87.2583},
+iconImage:'https://img.icons8.com/material-rounded/2x/street-view.png',
+content:'<h3> Spartan Sprint - Oscar Mike - Chicago 2 (Sept 9 )</h3>',
+label:'Obstacle Course Race',
+},
+{// Michigan Super Trifecta 
+    cordinates:{lat:40.2706,lng:-87.2583},
+iconImage:'https://img.icons8.com/material-rounded/2x/street-view.png',
+content:'<h3>Spartan Super - Michigan (Sept 22)</h3>',
+label:'Obstacle Course Race',
+},
+{//Dallas Beast 
+    cordinates:{lat:32.1029,lng:-97.8828},
+iconImage:'https://img.icons8.com/material-rounded/2x/street-view.png',
+content:'<h3> Spartan Beast- Oscar Mike - Dallas (Oct 27) </h3>',
+label:'Obstacle Course Race',
+},
+{//Dallas Beast Trifecta 
+    cordinates:{lat:32.1029,lng:-97.8828},
+iconImage:'https://img.icons8.com/material-rounded/2x/street-view.png',
+content:'<h3> Spartan Sprint- Oscar Mike - Dallas (Oct 28) </h3>',
+label:'Obstacle Course Race',
+},
+{//Pittsburg super
+    cordinates:{lat:41.2744,lng:-81.0154},
+iconImage:'https://img.icons8.com/material-rounded/2x/street-view.png',
+content:'<h3> Spartan Super - Ohio(Pittsburg)(Oct 13) </h3>',
+label:'Obstacle Course Race',
+},
+{//Pittsburg sprint
+    cordinates:{lat:41.2744,lng:-81.0154},
+iconImage:'https://img.icons8.com/material-rounded/2x/street-view.png',
+content:'<h3> Spartan Sprint - Ohio(Pittsburg)(Oct 14) </h3>',
+label:'Obstacle Course Race',
+},
+{//Dirty Duel
+    cordinates:{lat:43.0277,lng:-85.5929},
+iconImage:'https://img.icons8.com/material-rounded/2x/street-view.png',
+content:'<h3> Dirty Duel </h3>',
+label:'Trail Run',
+},
+
+];
+
+//loop through markers
+
+for(let i = 0;i < markers.length;i++){
+    addMarker (markers[i]);
+}
+
+// icons 
+//https://img.icons8.com/color/2x/exercise.png
+//https://img.icons8.com/color/2x/track-and-field.png
+//https://img.icons8.com/color/2x/filled-like.png
+//marker function
+function addMarker(props){//marker component
+    let marker = new google.maps.Marker({
+        position:props.cordinates,
+        map:map,
+        icon:props.iconImage,
+      
+        // animation:google.maps.Animation.Drop,
+});
+
+// let markerCluster = new markerCluster(map,addMarker
+//     icon:props,iconImage,
+
+
+// marker.addListener('click',toggleBounce);
+// }
+
+// function toggleBounce(){//https://developers.google.com/maps/documentation/javascript/markers
+//     if (marker.getAnimation() !== null){
+//         marker.setAnimation(null);
+//     }else{
+//         marker.setAnimation(google.maps.Animation.BOUNCE);
+//     }
+// }
+
+//checking for icon
+if(props.iconImage){
+    //setting icon
+    marker.setIcon(props.iconImage);
+}
+//checking for content 
+
+if (props.content){
+    let infoWindow = new google.maps.InfoWindow({
+          content:props.content,
+          label:props.label,
+      }) ;
+      marker.addListener('click',function(){
+        //   populateInfoWindow(this,largeInfowindow);
+          infoWindow.open(map,marker);
+      })   ;  
+}
+
+                   }
+                          }     
+                           
+            
+          </script>
+           </script>
+           <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHXusII93lnI3Q-k9YkrVl6hAnIdYFMnQ&callback=initMap"
+           async defer></script>
+    
+</body>
+</html>
